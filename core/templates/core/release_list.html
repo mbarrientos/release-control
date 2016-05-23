@@ -1,0 +1,12 @@
+{% extends "core/base.html" %}
+{% block body %}
+<h1>Releases</h1>
+<table class="table table-striped">
+    <tr><th>Name</th><th>Description</th><th>Status</th></tr>
+{% for release in release_list %}
+    <tr><td>{{ release.name }}</td><td>{{ release.description }}</td><td>{{ release.status }}</td></tr>
+{% empty %}
+    <tr>No releases yet.</tr>
+{% endfor %}
+</table>
+{% endblock %}
